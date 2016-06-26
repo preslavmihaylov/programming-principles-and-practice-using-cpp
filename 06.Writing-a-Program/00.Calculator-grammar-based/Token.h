@@ -7,8 +7,11 @@ enum eTokenType
     eTokenTypeMinus = '-',
     eTokenTypeMultiply = '*',
     eTokenTypeDivide = '/',
+    eTokenTypeFactorial = '!',
     eTokenTypeLeftParan = '(',
     eTokenTypeRightParan = ')',
+    eTokenTypeLeftCurlyParan = '{',
+    eTokenTypeRightCurlyParan = '}',
     eTokenTypeNumber = '0',
     eTokenTypeNull = '\0',
     eTokenTypesCount

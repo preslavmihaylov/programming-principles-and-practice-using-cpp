@@ -32,6 +32,21 @@ double primary();
 
 static Token_stream * token_str;
 
+bool has_decimal_point(double val)
+{
+    return (val - (int)val > 0.00);
+}
+
+double factorial(int val)
+{
+    if (val == 1)
+    {
+        return 1;
+    }
+
+    return val * factorial(val - 1);
+}
+
 double expression()
 {
     /*
@@ -72,6 +87,7 @@ double term()
     /*
         Term:
             Primary
+            Primary '!'
             Term '*' Primary
             Term '/' Primary
     */
@@ -93,13 +109,19 @@ double term()
                 divider = primary();
                 if (divider != 0)
                 {
-                    result /= primary();
+                    result /= divider;
                 }
                 else
                 {
                     throw runtime_error("Cannot divide by zero");
                 }
                 break;
+            case eTokenTypeFactorial:
+                if (has_decimal_point(result))
+                {
+                    throw runtime_error("Factorial not defined for real numbers");
+                }
+                result = factorial(result);
             case eTokenTypeNull:
                 return result;
             default:
@@ -118,31 +140,36 @@ double primary()
         Primary:
             Number
             '(' Expression ')'
+            '{' Expression '}'
     */
 
     Token tok = token_str->get();
 
-    if (tok.kind == eTokenTypeLeftParan)
+    switch (tok.kind)
     {
-        double result = expression();
-        tok = token_str->get();
+        case eTokenTypeLeftCurlyParan:
+        case eTokenTypeLeftParan:
+        {
+            char startingParan = tok.kind;
+            double result = expression();
+            tok = token_str->get();
 
-        if (tok.kind == eTokenTypeRightParan)
-        {
-            return result;
+            if ((tok.kind == eTokenTypeRightParan && startingParan == eTokenTypeLeftParan) ||
+                (tok.kind == eTokenTypeRightCurlyParan && startingParan == eTokenTypeLeftCurlyParan))
+            {
+                return result;
+            }
+            else
+            {
+                throw new runtime_error("Invalid parantheses");
+            }
+            break;
         }
-        else
-        {
-            throw new runtime_error("Invalid parantheses");
-        }
-    }
-    else if (tok.kind == eTokenTypeNumber)
-    {
-        return tok.value;
-    }
-    else
-    {
-        throw runtime_error("Invalid expression");
+        case eTokenTypeNumber:
+            return tok.value;
+            break;
+        default:
+            throw runtime_error("Invalid expression");
     }
 }
 
@@ -166,14 +193,12 @@ int main()
         catch (runtime_error& e)
         {
             cout << e.what() << endl;
-            delete token_str;
             return -1;
         }
         catch (exception& e)
         {
             cerr << e.what() << endl;
-            cout << "An unhandled Exception occured" << endl;
-            delete token_str;
+            cerr << "An unhandled Exception occured" << endl;
             return -1;
         }
 

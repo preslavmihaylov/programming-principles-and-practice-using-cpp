@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1466945248 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\04.names-ages-refactored\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

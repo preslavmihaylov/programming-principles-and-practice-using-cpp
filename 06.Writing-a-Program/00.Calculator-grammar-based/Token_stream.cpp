@@ -5,12 +5,15 @@ bool is_operator(char ch)
 {
     switch (ch)
     {
-        case '+':
-        case '-':
-        case '*':
-        case '/':
-        case '(':
-        case ')':
+        case eTokenTypePlus:
+        case eTokenTypeMinus:
+        case eTokenTypeMultiply:
+        case eTokenTypeDivide:
+        case eTokenTypeFactorial:
+        case eTokenTypeLeftCurlyParan:
+        case eTokenTypeRightCurlyParan:
+        case eTokenTypeLeftParan:
+        case eTokenTypeRightParan:
             return true;
         default:
             return false;
