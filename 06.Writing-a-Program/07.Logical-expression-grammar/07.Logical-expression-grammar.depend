@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1466972208 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\main.cpp
+1466976597 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\main.cpp
 	<iostream>
 	<stdexcept>
 	"Token_stream.h"
 	"Token.h"
 
-1466971497 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\token_stream.h
+1466975097 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\token_stream.h
 	"Token.h"
 	<sstream>
 
-1466971051 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\token.h
+1466974651 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\token.h
 	<string>
 
-1466972628 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\token_stream.cpp
+1466976228 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\07.logical-expression-grammar\token_stream.cpp
 	"Token_stream.h"
 	<iostream>
 	<stdexcept>
