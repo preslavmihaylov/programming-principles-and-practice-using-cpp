@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1468947403 source:c:\users\pmihaylo\projects\cpp-ppap\08.technicalities-functions\12.vector-info\main.cpp
+	<iostream>
+	<vector>
+	<climits>
+
