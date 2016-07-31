@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1469978352 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\00.date-lib\main.cpp
+	<iostream>
+	"Date.h"
+
+1469978102 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\00.date-lib\date.h
+	<ostream>
+	<istream>
+
+1469978326 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\00.date-lib\date.cpp
+	"Date.h"
+
