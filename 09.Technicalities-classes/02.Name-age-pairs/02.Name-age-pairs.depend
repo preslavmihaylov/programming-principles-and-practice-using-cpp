@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1470577668 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\02.name-age-pairs\main.cpp
+	<iostream>
+	"Name_ages.h"
+
+1470577560 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\02.name-age-pairs\name_ages.h
+	<vector>
+	<string>
+
+1470577585 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\02.name-age-pairs\name_ages.cpp
+	"Name_ages.h"
+	<stdexcept>
+	<iostream>
+	<cassert>
+	<algorithm>
+

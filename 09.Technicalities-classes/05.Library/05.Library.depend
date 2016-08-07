@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1470589563 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\05.library\book.cpp
+	"Book.h"
+
+1470589529 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\05.library\book.h
+	<ctime>
+	<string>
+
+1470589477 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\05.library\main.cpp
+	<iostream>
+	"Book.h"
+
