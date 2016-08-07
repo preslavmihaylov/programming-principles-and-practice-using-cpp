@@ -2,6 +2,11 @@
 
 using namespace std;
 
+bool IsValidISBN(string ISBN)
+{
+
+}
+
 Book::Book(string author, string title, string ISBN)
 {
     this->author = author;
