@@ -4,6 +4,7 @@
 #include <stdexcept>
 
 #include "../headers/Token_stream.h"
+#include "../headers/RomanNumeral.h"
 
 Token_stream::Token_stream(istream& inputSource)
 {
@@ -63,11 +64,12 @@ Token Token_stream::get()
     {
         token = Token((eTokenType)curr_ch);
     }
-    else if (is_digit(curr_ch))
+    else if (IsValidRomanDigit(curr_ch))
     {
+        RomanNumeral romanNumber;
         this->input_str->putback(curr_ch);
-        *this->input_str >> value;
-        token = Token(eTokenTypeNumber, value);
+        *this->input_str >> romanNumber;
+        token = Token(eTokenTypeNumber, romanNumber.AsInt());
     }
     else if (curr_ch == '"')
     {

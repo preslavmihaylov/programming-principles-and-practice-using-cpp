@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1475333641 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\01.sumnumbersfromfile\main.cpp
+	<iostream>
+	<fstream>
+

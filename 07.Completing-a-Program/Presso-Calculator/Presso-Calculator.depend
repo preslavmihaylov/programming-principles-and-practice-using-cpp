@@ -44,3 +44,50 @@
 	"../headers/Token.h"
 	"../headers/Utilities.h"
 
+1475947641 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\src\main.cpp
+	<cmath>
+	<iostream>
+	"../headers/Symbol_table.h"
+	"../headers/Utilities.h"
+	"../headers/Token.h"
+	"../headers/Token_stream.h"
+
+1467559971 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\headers\symbol_table.h
+	<map>
+	"Utilities.h"
+	"Variable.h"
+
+1475947525 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\headers\utilities.h
+	<string>
+
+1467558938 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\headers\variable.h
+
+1467556665 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\headers\token.h
+	<string>
+	"Utilities.h"
+
+1475945785 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\headers\token_stream.h
+	"Token.h"
+	"Utilities.h"
+	<stack>
+
+1467563697 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\src\symbol_table.cpp
+	<cassert>
+	"../headers/Utilities.h"
+	"../headers/Symbol_table.h"
+
+1475948018 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\src\token_stream.cpp
+	<stack>
+	<iostream>
+	<sstream>
+	<stdexcept>
+	"../headers/Token_stream.h"
+
+1475947581 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\07.completing-a-program\presso-calculator\src\utilities.cpp
+	<map>
+	<cassert>
+	<iostream>
+	<fstream>
+	"../headers/Token.h"
+	"../headers/Utilities.h"
+

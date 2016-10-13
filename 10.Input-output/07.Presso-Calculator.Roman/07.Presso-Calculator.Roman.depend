@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1475948121 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\src\main.cpp
+	<cmath>
+	<iostream>
+	"../headers/Symbol_table.h"
+	"../headers/Utilities.h"
+	"../headers/Token.h"
+	"../headers/Token_stream.h"
+
+1467559971 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\headers\symbol_table.h
+	<map>
+	"Utilities.h"
+	"Variable.h"
+
+1475947525 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\headers\utilities.h
+	<string>
+
+1467558938 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\headers\variable.h
+
+1467556665 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\headers\token.h
+	<string>
+	"Utilities.h"
+
+1475945785 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\headers\token_stream.h
+	"Token.h"
+	"Utilities.h"
+	<stack>
+
+1476382984 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\src\romannumeral.cpp
+	"../headers/RomanNumeral.h"
+	<unordered_map>
+	<climits>
+
+1476383128 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\headers\romannumeral.h
+	<string>
+	<istream>
+
+1467563697 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\src\symbol_table.cpp
+	<cassert>
+	"../headers/Utilities.h"
+	"../headers/Symbol_table.h"
+
+1476383097 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\src\token_stream.cpp
+	<stack>
+	<iostream>
+	<sstream>
+	<stdexcept>
+	"../headers/Token_stream.h"
+	"../headers/RomanNumeral.h"
+
+1475947581 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\07.presso-calculator.roman\src\utilities.cpp
+	<map>
+	<cassert>
+	<iostream>
+	<fstream>
+	"../headers/Token.h"
+	"../headers/Utilities.h"
+
