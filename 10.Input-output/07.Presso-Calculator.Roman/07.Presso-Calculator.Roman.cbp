@@ -32,11 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="headers/RomanNumeral.h" />
 		<Unit filename="headers/Symbol_table.h" />
 		<Unit filename="headers/Token.h" />
 		<Unit filename="headers/Token_stream.h" />
 		<Unit filename="headers/Utilities.h" />
 		<Unit filename="headers/Variable.h" />
+		<Unit filename="src/RomanNumeral.cpp" />
 		<Unit filename="src/Symbol_table.cpp" />
 		<Unit filename="src/Token_stream.cpp" />
 		<Unit filename="src/Utilities.cpp" />
