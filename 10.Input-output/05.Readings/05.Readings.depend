@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1476738476 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\05.readings\main.cpp
+	<iostream>
+	"Reading.h"
+
+1476738237 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\05.readings\reading.h
+	<istream>
+	<ostream>
+
+1476736751 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\05.readings\reading.cpp
+	"Reading.h"
+	<stdexcept>
+
+1476797393 source:c:\users\pmihaylo\projects\cpp-ppap\10.input-output\05.readings\main.cpp
+	<iostream>
+	"Year.h"
+	<fstream>
+
+1476734637 c:\users\pmihaylo\projects\cpp-ppap\10.input-output\05.readings\reading.h
+	<istream>
+	<ostream>
+
+1476797350 source:c:\users\pmihaylo\projects\cpp-ppap\10.input-output\05.readings\month.cpp
+	"Month.h"
+	<stdexcept>
+	<climits>
+
+1476789596 c:\users\pmihaylo\projects\cpp-ppap\10.input-output\05.readings\month.h
+	"Reading.h"
+	<string>
+	<istream>
+	<ostream>
+	<vector>
+
+1476797355 source:c:\users\pmihaylo\projects\cpp-ppap\10.input-output\05.readings\reading.cpp
+	"Reading.h"
+	<stdexcept>
+	<climits>
+
+1476797343 source:c:\users\pmihaylo\projects\cpp-ppap\10.input-output\05.readings\year.cpp
+	"Year.h"
+	<stdexcept>
+	<climits>
+
+1476789602 c:\users\pmihaylo\projects\cpp-ppap\10.input-output\05.readings\year.h
+	"Month.h"
+	<vector>
+	<istream>
+	<ostream>
+
