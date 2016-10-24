@@ -45,7 +45,7 @@ void ReverseFileContents(fstream& fileStream, int start, int end)
 
 void ReverseWordsInFile(fstream& fileStream)
 {
-	int endIndex;
+	int secondCharIndex;
 	char firstChar;
 	char secondChar;
 
@@ -54,50 +54,57 @@ void ReverseWordsInFile(fstream& fileStream)
 	int leftWordStart = 0;
 	int rightWordEnd = fileSize - 1;
 
-	for (int index = 0; index < (fileSize / 2); ++index)
+	for (int firstCharIndex = 0; firstCharIndex < (fileSize / 2); ++firstCharIndex)
 	{
 		// -2 in order to ignore '\n' character
-		endIndex = fileSize - 2 - index;
+		secondCharIndex = fileSize - 2 - firstCharIndex;
 		// extract first char
-		fileStream.seekg(index);
+		fileStream.seekg(firstCharIndex);
 		fileStream.get(firstChar);
 
 		// extract last char
-		fileStream.seekg(endIndex);
+		fileStream.seekg(secondCharIndex);
 		fileStream.get(secondChar);
 
 		// set second char at first char position
-		fileStream.seekp(index);
+		fileStream.seekp(firstCharIndex);
 		fileStream.put(secondChar);
 
 		// set first char at second char position
-		fileStream.seekp(endIndex);
+		fileStream.seekp(secondCharIndex);
 		fileStream.put(firstChar);
-		fileStream.flush();
 		
 		// Left word is completely swapped. Reverse it.
 		if ((firstChar == ' ') && (rightWordEnd != -1))
 		{
-			ReverseFileContents(fileStream, endIndex + 1, rightWordEnd);
-			fileStream.flush();
-			rightWordEnd = endIndex; // skip whitespaces
+			ReverseFileContents(fileStream, secondCharIndex + 1, rightWordEnd);
+			rightWordEnd = -1; // secondCharIndex; // skip whitespaces
 		}
-		else if (leftWordStart == -1)
+		
+		// start of right word encountered.
+		if ((firstChar != ' ') && (rightWordEnd == -1))
 		{
-			//leftWordStart = index;
+			rightWordEnd = secondCharIndex + 1;
 		}
 
 		// Right word is completely swapped. Reverse it.
 		if ((secondChar == ' ') && (leftWordStart != -1))
 		{
-			ReverseFileContents(fileStream, leftWordStart, index);
-			fileStream.flush();
-			leftWordStart = index + 1; // skip whitespaces
+			ReverseFileContents(fileStream, leftWordStart, firstCharIndex);
+			leftWordStart = -1; // skip whitespaces
 		}
-		else if (rightWordEnd == -1)
+		
+		// start of left word encountered;
+		if ((secondChar != ' ') && (leftWordStart == -1))
 		{
-			//rightWordEnd = endIndex + 1;
+			leftWordStart = firstCharIndex;
 		}
+	}
+
+	// Reverse final word leftover after iteration until the middle
+	if ((leftWordStart != -1) && (rightWordEnd != -1))
+	{
+		ReverseFileContents(fileStream, leftWordStart, rightWordEnd);
 	}
 }
 
@@ -116,8 +123,5 @@ int main()
 {
 	fstream fileStream("words.txt");
 	ReverseWordsInFile(fileStream);
-	// int fileSize = GetFileSize(fileStream);
-	// ReverseFileContents(fileStream, 0, fileSize);
-
 	return 0;
 }
