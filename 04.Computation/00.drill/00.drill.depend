@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1462089071 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\drill\main.cpp
-	<iostream>
-	<climits>
-	<stdexcept>
-	<algorithm>
-	<vector>
-

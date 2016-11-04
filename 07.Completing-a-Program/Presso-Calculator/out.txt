@@ -1,8 +1,0 @@
-Expression not terminated
-> Undeclared variable v
-> Undeclared variable v
-> Undeclared variable c
-> = 5
-> = 10
-> = 15
-> 

@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1466941946 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator-buggy-drill\main.cpp
-	"std_lib_facilities.h"
-
-1466941514 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator-buggy-drill\std_lib_facilities.h
-	<iostream>
-	<stdexcept>
-	<sstream>
-
