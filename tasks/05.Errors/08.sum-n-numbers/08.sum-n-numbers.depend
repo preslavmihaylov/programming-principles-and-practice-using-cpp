@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1465737128 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\05.errors\08.sum-n-numbers\main.cpp
+	<iostream>
+	<vector>
+	<limits>
+

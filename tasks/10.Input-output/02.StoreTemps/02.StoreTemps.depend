@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1475338677 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\02.storetemps\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<fstream>
+	<stdexcept>
+	<cmath>
+

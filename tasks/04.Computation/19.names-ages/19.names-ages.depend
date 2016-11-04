@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1462190531 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\03.computation\19.key-value-pairs\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+
+1466945348 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\04.computation\19.names-ages\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

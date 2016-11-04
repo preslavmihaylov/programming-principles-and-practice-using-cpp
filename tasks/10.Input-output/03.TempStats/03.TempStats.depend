@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1475339104 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\03.tempstats\main.cpp
+	<iostream>
+	<vector>
+	<stdexcept>
+	<fstream>
+	<cmath>
+

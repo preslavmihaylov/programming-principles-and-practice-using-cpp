@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1475941329 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\new folder\12.searchwordinfile\main.cpp
+	<iostream>
+	<fstream>
+	<strstream>
+

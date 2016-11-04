@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1468945604 source:c:\users\pmihaylo\projects\cpp-ppap\08.technicalities-functions\08.randint\cust_randint.cpp
+	"cust_randint.h"
+	<ctime>
+
+1468945666 c:\users\pmihaylo\projects\cpp-ppap\08.technicalities-functions\08.randint\cust_randint.h
+
+1468945765 source:c:\users\pmihaylo\projects\cpp-ppap\08.technicalities-functions\08.randint\main.cpp
+	<iostream>
+	<climits>
+	"cust_randint.h"
+

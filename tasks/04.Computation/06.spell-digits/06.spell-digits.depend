@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1462183534 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\03.computation\06.spell-digits\main.cpp
+	<iostream>
+	<vector>
+

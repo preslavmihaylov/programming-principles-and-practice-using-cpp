@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1466967391 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator-grammar-based\main.cpp
+	<iostream>
+	<sstream>
+	<stdexcept>
+	"Token.h"
+	"Token_stream.h"
+
+1466944448 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator-grammar-based\token.h
+
+1466372680 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator-grammar-based\token_stream.h
+	"Token.h"
+	<sstream>
+
+1466944456 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator-grammar-based\token_stream.cpp
+	"Token_stream.h"
+	<iostream>
+

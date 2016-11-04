@@ -1,0 +1,2 @@
+g++ -L./lib -o testgui.exe ./objs/main.o -L./lib -lbookgui  
+makefile:29: recipe for target 'testgui.exe' failed

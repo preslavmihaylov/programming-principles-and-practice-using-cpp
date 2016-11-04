@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1471103422 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\13.rational\main.cpp
+	<iostream>
+	"Rational.h"
+
+1471156745 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\13.rational\rational.h
+	<ostream>
+
+1471103304 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\13.rational\rational.cpp
+	"Rational.h"
+

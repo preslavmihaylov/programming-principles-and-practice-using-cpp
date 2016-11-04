@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1475332542 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\10.input-output\00.points-io\main.cpp
+	<iostream>
+	<stdexcept>
+	<climits>
+	<vector>
+	<fstream>
+

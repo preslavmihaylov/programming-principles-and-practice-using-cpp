@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1466344507 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator\main.cpp
+	<iostream>
+	<stdexcept>
+	<sstream>
+	<vector>
+	<algorithm>
+
+1466344507 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\06.writing-a-program\00.calculator-human-logic\main.cpp
+	<iostream>
+	<stdexcept>
+	<sstream>
+	<vector>
+	<algorithm>
+

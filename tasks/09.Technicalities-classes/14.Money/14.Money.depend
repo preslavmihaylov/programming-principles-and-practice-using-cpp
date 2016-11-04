@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1471160708 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\14.money\main.cpp
+	<iostream>
+	"Money.h"
+
+1471160738 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\14.money\money.cpp
+	"Money.h"
+	<stdexcept>
+	<string>
+
+1471160649 d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\09.technicalities-classes\14.money\money.h
+	<ostream>
+

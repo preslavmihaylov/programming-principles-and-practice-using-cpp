@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1462187773 source:d:\programming\repositories\personal\taken-courses\programming-principles-and-practice-cpp\03.computation\15.first-n-primes\main.cpp
+	<iostream>
+	<vector>
+
