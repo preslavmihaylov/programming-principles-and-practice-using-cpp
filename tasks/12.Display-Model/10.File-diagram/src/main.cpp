@@ -9,9 +9,11 @@ using namespace std;
 Rectangle * rectangles[RECTS_CNT];
 Text * titles[RECTS_CNT * 2];
 Line * links[RECTS_CNT * 2]; // max 2 links for every rectangle
+Line * linksPointers[RECTS_CNT * 2 * 2]; // max 2 pointer parts per 2 links for every rectangle
 int rectanglesIndex = 0;
 int titlesIndex = 0;
 int linksIndex = 0;
+int linksPointersIndex = 0;
 
 static void StyleRectangle(Rectangle & rect)
 {
@@ -25,16 +27,52 @@ static void LinkRectangles(Simple_window & window,
 						   int destRectX,
 						   int destRectY)
 {
+	const double INTERSECTION_OFFSET = 10;
+	const double ARROW_OFFSET = 3; 
+	
+	double srcX = srcRectX + (RECTS_WIDTH * 3 / 4);
+	double srcY = srcRectY;
+	double destX = destRectX + (RECTS_WIDTH * 3 / 4);
+	double destY = destRectY + RECTS_HEIGHT + ((destRectsCnt - 1) * 5);
 	links[linksIndex] = new Line(
-								Point(srcRectX + (RECTS_WIDTH * 3 / 4),
-									  srcRectY), 
-								Point(destRectX + (RECTS_WIDTH * 3 / 4),
-				     				  destRectY + RECTS_HEIGHT + ((destRectsCnt - 1) * 5)));
+								Point(srcX, srcY), 
+								Point(destX, destY));
 
 	links[linksIndex]->set_style(Line_style(Line_style::solid, 2));
 	window.attach(*links[linksIndex++]);
-
 	
+	// Handle link Pointers (makes it look like an arrow)
+	if (destX - srcX != 0)
+	{
+		double lineSlope = (destY - srcY) / (destX - srcX);
+		double perpendicularLineSlope = -1/lineSlope;
+		double sign = -1;
+		if (lineSlope > 0)
+		{
+			sign = 1;
+		}
+
+		Point intersectionPoint(destX + (sign * INTERSECTION_OFFSET), 
+								destY + (sign * INTERSECTION_OFFSET * lineSlope));
+		Point leftPointPLine(intersectionPoint.x + (sign * ARROW_OFFSET), 
+							 intersectionPoint.y + (sign * ARROW_OFFSET * perpendicularLineSlope));
+
+		Point rightPointPLine(intersectionPoint.x - (sign * ARROW_OFFSET), 
+							  intersectionPoint.y - (sign * ARROW_OFFSET * perpendicularLineSlope));
+		
+		linksPointers[linksPointersIndex] = new Line(Point(destX, destY),
+													 leftPointPLine);
+		
+		linksPointers[linksPointersIndex + 1] = new Line(Point(destX, destY),
+														 rightPointPLine);
+		
+		linksPointers[linksPointersIndex]->set_style(Line_style(Line_style::solid, 2));
+		linksPointers[linksPointersIndex + 1]->set_style(Line_style(Line_style::solid, 2));
+
+		window.attach(*linksPointers[linksPointersIndex]);
+		window.attach(*linksPointers[linksPointersIndex + 1]);
+		linksPointersIndex += 2;
+	}
 }
 
 static void DrawTextInRectangle(Simple_window & window,
@@ -151,13 +189,6 @@ static void DrawComponents(Simple_window & window)
 					     FLTK_CODE_Y, 
 					     FLTK_CODE_CONTENT);
 	
-	LinkRectangles(window,
-				   FLTK_CODE_X,
-				   FLTK_CODE_Y,
-				   FLTK_HEADERS_CNT,
-				   FLTK_HEADERS_X,
-				   FLTK_HEADERS_Y);
-	
 	// Draw Window.h
 	DrawRectangles(window, 
 				   WINDOW_H_CNT, 
@@ -177,20 +208,6 @@ static void DrawComponents(Simple_window & window)
 					     WINDOW_H_X, 
 					     WINDOW_H_Y, 
 					     WINDOW_H_CONTENT);
-	
-	LinkRectangles(window,
-				   WINDOW_H_X,
-				   WINDOW_H_Y,
-				   FLTK_HEADERS_CNT,
-				   FLTK_HEADERS_X,
-				   FLTK_HEADERS_Y);
-	
-	LinkRectangles(window,
-				   WINDOW_H_X,
-				   WINDOW_H_Y,
-				   POINT_H_CNT,
-				   POINT_H_X,
-				   POINT_H_Y);
 	
 	// Draw Point.h
 	DrawRectangles(window, 
@@ -232,20 +249,6 @@ static void DrawComponents(Simple_window & window)
 					     GRAPH_H_Y, 
 					     GRAPH_H_CONTENT);
 	
-	LinkRectangles(window,
-				   GRAPH_H_X,
-				   GRAPH_H_Y,
-				   FLTK_HEADERS_CNT,
-				   FLTK_HEADERS_X,
-				   FLTK_HEADERS_Y);
-	
-	LinkRectangles(window,
-				   GRAPH_H_X,
-				   GRAPH_H_Y,
-				   POINT_H_CNT,
-				   POINT_H_X,
-				   POINT_H_Y);
-	
 	// Draw Window.cpp
 	DrawRectangles(window, 
 				   WINDOW_CPP_CNT, 
@@ -265,13 +268,6 @@ static void DrawComponents(Simple_window & window)
 					     WINDOW_CPP_X, 
 					     WINDOW_CPP_Y, 
 					     WINDOW_CPP_CONTENT);
-
-	LinkRectangles(window,
-				   WINDOW_CPP_X,
-				   WINDOW_CPP_Y,
-				   WINDOW_H_CNT,
-				   WINDOW_H_X,
-				   WINDOW_H_Y);
 	
 	// Draw GUI.h
 	DrawRectangles(window, 
@@ -293,20 +289,6 @@ static void DrawComponents(Simple_window & window)
 					     GUI_H_Y, 
 					     GUI_H_CONTENT);
 	
-	LinkRectangles(window,
-				   GUI_H_X,
-				   GUI_H_Y,
-				   WINDOW_H_CNT,
-				   WINDOW_H_X,
-				   WINDOW_H_Y);
-	
-	LinkRectangles(window,
-				   GUI_H_X,
-				   GUI_H_Y,
-				   FLTK_HEADERS_CNT,
-				   FLTK_HEADERS_X,
-				   FLTK_HEADERS_Y);
-	
 	// Draw Graph.cpp
 	DrawRectangles(window, 
 				   GRAPH_CPP_CNT, 
@@ -327,13 +309,6 @@ static void DrawComponents(Simple_window & window)
 					     GRAPH_CPP_Y, 
 					     GRAPH_CPP_CONTENT);
 	
-	LinkRectangles(window,
-				   GRAPH_CPP_X,
-				   GRAPH_CPP_Y,
-				   GRAPH_H_CNT,
-				   GRAPH_H_X,
-				   GRAPH_H_Y);
-	
 	// Draw Simple_window.h
 	DrawRectangles(window, 
 				   SIMPLE_WINDOW_H_CNT, 
@@ -353,20 +328,6 @@ static void DrawComponents(Simple_window & window)
 					     SIMPLE_WINDOW_H_X, 
 					     SIMPLE_WINDOW_H_Y, 
 					     SIMPLE_WINDOW_H_CONTENT);
-	
-	LinkRectangles(window,
-				   SIMPLE_WINDOW_H_X,
-				   SIMPLE_WINDOW_H_Y,
-				   WINDOW_H_CNT,
-				   WINDOW_H_X,
-				   WINDOW_H_Y);
-	
-	LinkRectangles(window,
-				   SIMPLE_WINDOW_H_X,
-				   SIMPLE_WINDOW_H_Y,
-				   GUI_H_CNT,
-				   GUI_H_X,
-				   GUI_H_Y);
 	
 	// Draw GUI.cpp
 	DrawRectangles(window, 
@@ -415,6 +376,84 @@ static void DrawComponents(Simple_window & window)
 					   CHAPTER_12_CPP_Y, 
 					   CHAPTER_12_CPP_CONTENT);
 	
+	// Draw links
+	LinkRectangles(window,
+				   FLTK_CODE_X,
+				   FLTK_CODE_Y,
+				   FLTK_HEADERS_CNT,
+				   FLTK_HEADERS_X,
+				   FLTK_HEADERS_Y);
+	
+	LinkRectangles(window,
+				   WINDOW_H_X,
+				   WINDOW_H_Y,
+				   FLTK_HEADERS_CNT,
+				   FLTK_HEADERS_X,
+				   FLTK_HEADERS_Y);
+	
+	LinkRectangles(window,
+				   WINDOW_H_X,
+				   WINDOW_H_Y,
+				   POINT_H_CNT,
+				   POINT_H_X,
+				   POINT_H_Y);
+	
+	LinkRectangles(window,
+				   GRAPH_H_X,
+				   GRAPH_H_Y,
+				   FLTK_HEADERS_CNT,
+				   FLTK_HEADERS_X,
+				   FLTK_HEADERS_Y);
+	
+	LinkRectangles(window,
+				   GRAPH_H_X,
+				   GRAPH_H_Y,
+				   POINT_H_CNT,
+				   POINT_H_X,
+				   POINT_H_Y);
+
+	LinkRectangles(window,
+				   WINDOW_CPP_X,
+				   WINDOW_CPP_Y,
+				   WINDOW_H_CNT,
+				   WINDOW_H_X,
+				   WINDOW_H_Y);
+	
+	LinkRectangles(window,
+				   GUI_H_X,
+				   GUI_H_Y,
+				   WINDOW_H_CNT,
+				   WINDOW_H_X,
+				   WINDOW_H_Y);
+	
+	LinkRectangles(window,
+				   GUI_H_X,
+				   GUI_H_Y,
+				   FLTK_HEADERS_CNT,
+				   FLTK_HEADERS_X,
+				   FLTK_HEADERS_Y);
+	
+	LinkRectangles(window,
+				   GRAPH_CPP_X,
+				   GRAPH_CPP_Y,
+				   GRAPH_H_CNT,
+				   GRAPH_H_X,
+				   GRAPH_H_Y);
+	
+	LinkRectangles(window,
+				   SIMPLE_WINDOW_H_X,
+				   SIMPLE_WINDOW_H_Y,
+				   WINDOW_H_CNT,
+				   WINDOW_H_X,
+				   WINDOW_H_Y);
+	
+	LinkRectangles(window,
+				   SIMPLE_WINDOW_H_X,
+				   SIMPLE_WINDOW_H_Y,
+				   GUI_H_CNT,
+				   GUI_H_X,
+				   GUI_H_Y);
+	
 	LinkRectangles(window,
 				   CHAPTER_12_CPP_X,
 				   CHAPTER_12_CPP_Y,
@@ -430,6 +469,30 @@ static void DrawComponents(Simple_window & window)
 				   SIMPLE_WINDOW_H_Y);
 }
 
+void DestroyResources()
+{
+	int index;
+	for (index = 0; index < rectanglesIndex; ++index)
+	{
+		delete rectangles[index];
+	}
+
+	for (index = 0; index < titlesIndex; ++index)
+	{
+		delete titles[index];
+	}
+
+	for (index = 0; index < linksIndex; ++index)
+	{
+		delete links[index];
+	}
+
+	for (index = 0; index < linksPointersIndex; ++index)
+	{
+		delete linksPointers[index];
+	}
+}
+
 int main()
 {
 	using namespace Graph_lib;
@@ -440,4 +503,5 @@ int main()
 	DrawComponents(window);
 
 	window.wait_for_button();
+	DestroyResources();
 }
