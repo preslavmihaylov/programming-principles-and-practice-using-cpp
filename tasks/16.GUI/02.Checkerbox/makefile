@@ -14,7 +14,7 @@ LDFLAGS=-L$(LIB_DIR) -lbookgui $(FLTK_LIBS)
 
 SOURCES=$(notdir $(shell find $(SRC_DIR) -name '*.cpp'))
 OBJECT_FILES=$(SOURCES:%.cpp=$(OBJ_DIR)/%.o)
-TARGET_FILE=my-window.exe
+TARGET_FILE=checkerbox.exe
 
 vpath %.cpp $(SRC_DIR)
 

@@ -14,12 +14,14 @@ LDFLAGS=-L$(LIB_DIR) -lbookgui $(FLTK_LIBS)
 
 SOURCES=$(notdir $(shell find $(SRC_DIR) -name '*.cpp'))
 OBJECT_FILES=$(SOURCES:%.cpp=$(OBJ_DIR)/%.o)
-TARGET_FILE=my-window.exe
+TARGET_FILE=currency-converter.exe
 
 vpath %.cpp $(SRC_DIR)
 
 # Rules
-all: $(SOURCES) $(TARGET_FILE)
+all: clean $(SOURCES) $(TARGET_FILE)
+
+target: $(SOURCES) $(TARGET_FILE)
 
 $(TARGET_FILE): $(OBJ_DIR) $(OBJECT_FILES)
 	$(LD) -o $@ $(OBJECT_FILES) $(LDFLAGS) 

@@ -1,3 +1,6 @@
+#ifndef LINES_WINDOW_H
+#define LINES_WINDOW_H
+
 #include "GUI.h"
 #include "Graph.h"
 
@@ -31,3 +34,4 @@ private:
 	void quit();
 };
 
+#endif // LINES_WINDOW_H
