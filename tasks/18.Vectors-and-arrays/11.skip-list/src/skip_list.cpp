@@ -82,6 +82,7 @@ SkipList::SkipList(const SkipList& sl) // copy constructor
 
 SkipList& SkipList::operator=(const SkipList& sl) // copy assignment
 {
+	if (this == &sl) return *this;
 	destroyObject();
 	copyObject(sl);
 

@@ -50,6 +50,9 @@ int main()
 	cout << sl1 << endl;
 	cout << "copy assignment" << endl;
 	cout << sl2 << endl;
+	sl2 = sl2;
+	cout << "self assignment" << endl;
+	cout << sl2 << endl;
 
 	return 0;
 }
