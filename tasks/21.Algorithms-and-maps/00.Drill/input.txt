@@ -1,0 +1,10 @@
+towel 10 25
+shirt 3 60
+paper 2 20
+hat 9 8
+watch 5 100
+jeans 6 40
+box 1 30
+bag 4 10
+book 7 10
+parfume 8 70

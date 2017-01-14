@@ -1,0 +1,10 @@
+tole sofia {(shoe 12.3 3) (fork 14.1 2)}
+gosho plovdiv {(shoe 12.3 3) (fork 14.1 2)}
+binka varna {(shoe 12.3 3) (fork 14.1 2)}
+minka ruse {(shoe 12.3 3) (fork 14.1 2)}
+miko ruse {(shoe 12.3 3) (fork 14.1 2)}
+chiko plovdiv {(shoe 12.3 3) (fork 14.1 2)}
+kolio sofia {(shoe 12.3 3) (fork 14.1 2)}
+fiki svishtov {(shoe 12.3 3) (fork 14.1 2)}
+mama turnovo {(shoe 12.3 3) (fork 14.1 2)}
+koko svishtov {(shoe 12.3 3) (fork 14.1 2)}
